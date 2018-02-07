@@ -60,7 +60,10 @@ const images = {
   rnWarning: require("../assets/rn-warning.png"),
   perfUtil: require("../assets/PerfUtil.png"),
   devTool: require("../assets/ReactDevTools.png"),
-  detox: require("../assets/detox.gif")
+  detox: require("../assets/detox.gif"),
+  iknow: require("../assets/iknow.jpg"),
+  nativeFeels: require("../assets/nativefeels.jpg"),
+  packages: require("../assets/packages.png")
 };
 
 const logos = {
@@ -94,11 +97,6 @@ export default class Presentation extends React.Component {
             asd sad asdasdsad asd as
           </Text> */}
         </Slide>
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading fit caps lineHeight={1} textColor="secondary">
-            VÉGE
-          </Heading>
-        </Slide>
         <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
           <Heading size={4} textColor="tertiary" caps>Mi az a react native?</Heading>
           <List textColor="secondary">
@@ -109,6 +107,16 @@ export default class Presentation extends React.Component {
             <ListItem>Tényleges natív kód (<span style={{ 'text-decoration': 'line-through' }}>WebView, Hybrid app</span> )</ListItem>
             <ListItem>Nyilt forráskód (3-Clause BSD License)</ListItem>
           </List>
+        </Slide>
+        <Slide transition={["slide"]}>
+          {/* <Heading size={4} textColor="black">
+            Navigáció a képernyők között
+          </Heading> */}
+          <Layout>
+            <Fill>
+              <Image height="400px" src={images.nativeFeels}/>
+            </Fill>
+          </Layout>
         </Slide>
         <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
           <Heading size={4} textColor="tertiary" caps>React native előnyei...</Heading>
@@ -200,6 +208,16 @@ export default class Presentation extends React.Component {
           <ReactStateLifeCycleExample />
         </Slide>
         <Slide transition={["slide"]}>
+          {/* <Heading size={4} textColor="black">
+            Navigáció a képernyők között
+          </Heading> */}
+          <Layout>
+            <Fill>
+              <Image height="400px" src={images.iknow}/>
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["slide"]}>
           <Heading size={4} textColor="tertiary" caps>React Native</Heading>
           <List textColor="secondary">
             <ListItem>Community-driven</ListItem>
@@ -212,19 +230,19 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["slide"]} bgColor="tertiary" >
           <Heading size={6} textColor="primary" caps>Base components</Heading>
-          <iframe width="880" height="425" frameborder="0" src="http://dabbott.github.io/react-native-web-player/#code=import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%0Aimport%20%7B%20AppRegistry%2C%20StyleSheet%2C%20Text%2C%20View%20%7D%20from%20'react-native'%0A%0Aclass%20App%20extends%20Component%20%7B%0A%20%20render()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%3CView%3E%0A%20%20%20%20%20%20%20%20%3CText%3E%0A%20%20%20%20%20%20%20%20%20%20Hello%20World%0A%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20)%0A%20%20%7D%0A%7D%0A%0AAppRegistry.registerComponent('App'%2C%20()%20%3D%3E%20App)%0A"></iframe>
+          <iframe width="880" height="425" frameborder="0" src="https://dabbott.github.io/react-native-web-player/#code=import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%0Aimport%20%7B%20AppRegistry%2C%20StyleSheet%2C%20Text%2C%20View%20%7D%20from%20'react-native'%0A%0Aclass%20App%20extends%20Component%20%7B%0A%20%20render()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%3CView%3E%0A%20%20%20%20%20%20%20%20%3CText%3E%0A%20%20%20%20%20%20%20%20%20%20Hello%20World%0A%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20)%0A%20%20%7D%0A%7D%0A%0AAppRegistry.registerComponent('App'%2C%20()%20%3D%3E%20App)%0A"></iframe>
         </Slide>
         <Slide transition={["slide"]} bgColor="tertiary" >
           <Heading size={6} textColor="primary" caps>Style</Heading>
-          <iframe width="880" height="425" frameborder="0" src="http://dabbott.github.io/react-native-web-player/#code=import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%3B%0Aimport%20%7B%20AppRegistry%2C%20StyleSheet%2C%20Text%2C%20View%20%7D%20from%20'react-native'%3B%0A%0Aexport%20default%20class%20LotsOfStyles%20extends%20Component%20%7B%0A%20%20render()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%3CView%3E%0A%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.red%7D%3Ejust%20red%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.bigblue%7D%3Ejust%20bigblue%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%3CText%20style%3D%7B%5Bstyles.bigblue%2C%20styles.red%5D%7D%3Ebigblue%2C%20then%20red%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%3CText%20style%3D%7B%5Bstyles.red%2C%20styles.bigblue%5D%7D%3Ered%2C%20then%20bigblue%3C%2FText%3E%0A%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20)%3B%0A%20%20%7D%0A%7D%0A%0Aconst%20styles%20%3D%20StyleSheet.create(%7B%0A%20%20bigblue%3A%20%7B%0A%20%20%20%20color%3A%20'blue'%2C%0A%20%20%20%20fontWeight%3A%20'bold'%2C%0A%20%20%20%20fontSize%3A%2030%2C%0A%20%20%7D%2C%0A%20%20red%3A%20%7B%0A%20%20%20%20color%3A%20'red'%2C%0A%20%20%7D%2C%0A%7D)%3B%0A%0A%2F%2F%20skip%20this%20line%20if%20using%20Create%20React%20Native%20App%0AAppRegistry.registerComponent('AwesomeProject'%2C%20()%20%3D%3E%20LotsOfStyles)%3B%0A"></iframe>
+          <iframe width="880" height="425" frameborder="0" src="https://dabbott.github.io/react-native-web-player/#code=import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%3B%0Aimport%20%7B%20AppRegistry%2C%20StyleSheet%2C%20Text%2C%20View%20%7D%20from%20'react-native'%3B%0A%0Aexport%20default%20class%20LotsOfStyles%20extends%20Component%20%7B%0A%20%20render()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%3CView%3E%0A%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.red%7D%3Ejust%20red%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.bigblue%7D%3Ejust%20bigblue%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%3CText%20style%3D%7B%5Bstyles.bigblue%2C%20styles.red%5D%7D%3Ebigblue%2C%20then%20red%3C%2FText%3E%0A%20%20%20%20%20%20%20%20%3CText%20style%3D%7B%5Bstyles.red%2C%20styles.bigblue%5D%7D%3Ered%2C%20then%20bigblue%3C%2FText%3E%0A%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20)%3B%0A%20%20%7D%0A%7D%0A%0Aconst%20styles%20%3D%20StyleSheet.create(%7B%0A%20%20bigblue%3A%20%7B%0A%20%20%20%20color%3A%20'blue'%2C%0A%20%20%20%20fontWeight%3A%20'bold'%2C%0A%20%20%20%20fontSize%3A%2030%2C%0A%20%20%7D%2C%0A%20%20red%3A%20%7B%0A%20%20%20%20color%3A%20'red'%2C%0A%20%20%7D%2C%0A%7D)%3B%0A%0A%2F%2F%20skip%20this%20line%20if%20using%20Create%20React%20Native%20App%0AAppRegistry.registerComponent('AwesomeProject'%2C%20()%20%3D%3E%20LotsOfStyles)%3B%0A"></iframe>
         </Slide>
         <Slide transition={["slide"]} bgColor="tertiary" >
           <Heading size={6} textColor="primary" caps>Flex Box</Heading>
-          <iframe width="880" height="425" frameborder="0" src="http://dabbott.github.io/react-native-web-player/#code=import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%3B%0Aimport%20%7B%20AppRegistry%2C%20View%20%7D%20from%20'react-native'%3B%0A%0Aexport%20default%20class%20AlignItemsBasics%20extends%20Component%20%7B%0A%20%20render()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%2F%2F%20Try%20setting%20%60alignItems%60%20to%20'flex-start'%0A%20%20%20%20%20%20%2F%2F%20Try%20setting%20%60justifyContent%60%20to%20%60flex-end%60.%0A%20%20%20%20%20%20%2F%2F%20Try%20setting%20%60flexDirection%60%20to%20%60row%60.%0A%20%20%20%20%20%20%3CView%20style%3D%7B%7B%0A%20%20%20%20%20%20%20%20flex%3A%201%2C%0A%20%20%20%20%20%20%20%20flexDirection%3A%20'column'%2C%0A%20%20%20%20%20%20%20%20justifyContent%3A%20'center'%2C%0A%20%20%20%20%20%20%20%20alignItems%3A%20'center'%2C%0A%20%20%20%20%20%20%7D%7D%3E%0A%20%20%20%20%20%20%20%20%3CView%20style%3D%7B%7Bwidth%3A%2050%2C%20height%3A%2050%2C%20backgroundColor%3A%20'powderblue'%7D%7D%20%2F%3E%0A%20%20%20%20%20%20%20%20%3CView%20style%3D%7B%7Bwidth%3A%2050%2C%20height%3A%2050%2C%20backgroundColor%3A%20'skyblue'%7D%7D%20%2F%3E%0A%20%20%20%20%20%20%20%20%3CView%20style%3D%7B%7Bwidth%3A%2050%2C%20height%3A%2050%2C%20backgroundColor%3A%20'steelblue'%7D%7D%20%2F%3E%0A%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20)%3B%0A%20%20%7D%0A%7D%3B%0A%0A%2F%2F%20skip%20this%20line%20if%20using%20Create%20React%20Native%20App%0AAppRegistry.registerComponent('AwesomeProject'%2C%20()%20%3D%3E%20AlignItemsBasics)%3B"></iframe>
+          <iframe width="880" height="425" frameborder="0" src="https://dabbott.github.io/react-native-web-player/#code=import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%3B%0Aimport%20%7B%20AppRegistry%2C%20View%20%7D%20from%20'react-native'%3B%0A%0Aexport%20default%20class%20AlignItemsBasics%20extends%20Component%20%7B%0A%20%20render()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%2F%2F%20Try%20setting%20%60alignItems%60%20to%20'flex-start'%0A%20%20%20%20%20%20%2F%2F%20Try%20setting%20%60justifyContent%60%20to%20%60flex-end%60.%0A%20%20%20%20%20%20%2F%2F%20Try%20setting%20%60flexDirection%60%20to%20%60row%60.%0A%20%20%20%20%20%20%3CView%20style%3D%7B%7B%0A%20%20%20%20%20%20%20%20flex%3A%201%2C%0A%20%20%20%20%20%20%20%20flexDirection%3A%20'column'%2C%0A%20%20%20%20%20%20%20%20justifyContent%3A%20'center'%2C%0A%20%20%20%20%20%20%20%20alignItems%3A%20'center'%2C%0A%20%20%20%20%20%20%7D%7D%3E%0A%20%20%20%20%20%20%20%20%3CView%20style%3D%7B%7Bwidth%3A%2050%2C%20height%3A%2050%2C%20backgroundColor%3A%20'powderblue'%7D%7D%20%2F%3E%0A%20%20%20%20%20%20%20%20%3CView%20style%3D%7B%7Bwidth%3A%2050%2C%20height%3A%2050%2C%20backgroundColor%3A%20'skyblue'%7D%7D%20%2F%3E%0A%20%20%20%20%20%20%20%20%3CView%20style%3D%7B%7Bwidth%3A%2050%2C%20height%3A%2050%2C%20backgroundColor%3A%20'steelblue'%7D%7D%20%2F%3E%0A%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20)%3B%0A%20%20%7D%0A%7D%3B%0A%0A%2F%2F%20skip%20this%20line%20if%20using%20Create%20React%20Native%20App%0AAppRegistry.registerComponent('AwesomeProject'%2C%20()%20%3D%3E%20AlignItemsBasics)%3B"></iframe>
         </Slide>
         <Slide transition={["slide"]} bgColor="tertiary" >
           <Heading size={6} textColor="primary" caps>Networking</Heading>
-          <iframe width="880" height="425" frameborder="0" src="http://dabbott.github.io/react-native-web-player/#code=import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%3B%0Aimport%20%7B%20AppRegistry%2C%20View%2C%20StyleSheet%2C%20Text%20%7D%20from%20'react-native'%3B%0A%0Aexport%20default%20class%20FetchBasics%20extends%20Component%20%7B%0A%20%20constructor(props)%7B%0A%20%20%20%20super(props)%3B%0A%20%20%20%20this.state%20%3D%20%7B%0A%20%20%20%20%20%20movieData%3A%20%5B%5D%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20%0A%20%20componentDidMount()%20%7B%0A%20%20%20%20return%20fetch('https%3A%2F%2Ffacebook.github.io%2Freact-native%2Fmovies.json')%0A%20%20%20%20%20%20.then((response)%20%3D%3E%20response.json())%0A%20%20%20%20%20%20.then((responseJson)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20let%20movieData%20%3D%20%5B%5D%3B%0A%20%20%20%20%20%20%20%20responseJson.movies.forEach((item%2C%20idx)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20movieData.push(%3CText%3E%20%7Bidx%7D%20%7Bitem.title%7D%20%3C%2FText%3E)%3B%0A%20%20%20%20%20%20%20%20%7D)%3B%0A%20%20%20%20%20%20%20%20this.setState(%7B%0A%20%20%20%20%20%20%20%20%20%20movieData%3A%20movieData%0A%20%20%20%20%20%20%20%20%7D)%3B%0A%20%20%20%20%20%20%7D)%0A%20%20%20%20%20%20.catch((error)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20console.error(error)%3B%0A%20%20%20%20%20%20%7D)%3B%0A%20%20%7D%0A%20%20%0A%20%20render()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20%3CView%3E%0A%20%20%20%20%20%20%20%20%20%20%7Bthis.state.movieData%7D%0A%20%20%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20)%3B%0A%20%20%7D%0A%7D%3B%0A%0A%2F%2F%20skip%20this%20line%20if%20using%20Create%20React%20Native%20App%0AAppRegistry.registerComponent('AwesomeProject'%2C%20()%20%3D%3E%20FetchBasics)%3B"></iframe>
+          <iframe width="880" height="425" frameborder="0" src="https://dabbott.github.io/react-native-web-player/#code=import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%3B%0Aimport%20%7B%20AppRegistry%2C%20View%2C%20StyleSheet%2C%20Text%20%7D%20from%20'react-native'%3B%0A%0Aexport%20default%20class%20FetchBasics%20extends%20Component%20%7B%0A%20%20constructor(props)%7B%0A%20%20%20%20super(props)%3B%0A%20%20%20%20this.state%20%3D%20%7B%0A%20%20%20%20%20%20movieData%3A%20%5B%5D%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20%0A%20%20componentDidMount()%20%7B%0A%20%20%20%20return%20fetch('https%3A%2F%2Ffacebook.github.io%2Freact-native%2Fmovies.json')%0A%20%20%20%20%20%20.then((response)%20%3D%3E%20response.json())%0A%20%20%20%20%20%20.then((responseJson)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20let%20movieData%20%3D%20%5B%5D%3B%0A%20%20%20%20%20%20%20%20responseJson.movies.forEach((item%2C%20idx)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20movieData.push(%3CText%3E%20%7Bidx%7D%20%7Bitem.title%7D%20%3C%2FText%3E)%3B%0A%20%20%20%20%20%20%20%20%7D)%3B%0A%20%20%20%20%20%20%20%20this.setState(%7B%0A%20%20%20%20%20%20%20%20%20%20movieData%3A%20movieData%0A%20%20%20%20%20%20%20%20%7D)%3B%0A%20%20%20%20%20%20%7D)%0A%20%20%20%20%20%20.catch((error)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20console.error(error)%3B%0A%20%20%20%20%20%20%7D)%3B%0A%20%20%7D%0A%20%20%0A%20%20render()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20%3CView%3E%0A%20%20%20%20%20%20%20%20%20%20%7Bthis.state.movieData%7D%0A%20%20%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20)%3B%0A%20%20%7D%0A%7D%3B%0A%0A%2F%2F%20skip%20this%20line%20if%20using%20Create%20React%20Native%20App%0AAppRegistry.registerComponent('AwesomeProject'%2C%20()%20%3D%3E%20FetchBasics)%3B"></iframe>
         </Slide>
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading fit caps lineHeight={1} textColor="secondary">
@@ -233,6 +251,16 @@ export default class Presentation extends React.Component {
           <Heading fit caps lineHeight={1} textColor="secondary">
             Külső komponens csomagok...
           </Heading>
+        </Slide>
+        <Slide transition={["slide"]}>
+          {/* <Heading size={4} textColor="black">
+            Navigáció a képernyők között
+          </Heading> */}
+          <Layout>
+            <Fill>
+              <Image height="400px" src={images.packages}/>
+            </Fill>
+          </Layout>
         </Slide>
         <Slide transition={["slide"]}>
           <Heading size={3} textColor="black">
