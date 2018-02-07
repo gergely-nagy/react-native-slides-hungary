@@ -2,7 +2,8 @@
   "name": "spectacle-boilerplate",
   "version": "1.0.1",
   "description": "ReactJS Powered Presentation Framework",
-  "main": "lib/index.js",
+  "homepage": "https://gergely-nagy.github.io/react-native-slides-hungary/",
+  "main": "docs/bundle.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
